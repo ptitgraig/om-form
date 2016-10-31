@@ -467,6 +467,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	position:absolute;
 	
 }
+@keyframes floating {
+	0% {
+		bottom: 48px;
+		-webkit-transform:rotate(1deg);
+		-webkit-transform-origin:-20% -40%;
+	}
+	50% {
+		bottom: 52px;
+		-webkit-transform:rotate(-1deg);
+		-webkit-transform-origin:-20% -40%;
+	}
+	100% {
+		bottom: 48px;
+		-webkit-transform:rotate(1deg) ;
+		-webkit-transform-origin:-20% -40%;
+	}
+}
 @-webkit-keyframes floating {
 	0% {
 		bottom: 48px;
@@ -508,6 +525,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	width:200px;
 	bottom:30px;
 	
+}
+@keyframes movenow {
+	0%   {right:110%;}
+	100% {right:0;}
 }
 @-webkit-keyframes movenow {
 	0%   {right:110%;}

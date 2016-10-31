@@ -2,6 +2,7 @@
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>om form</title>
@@ -16,10 +17,6 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
   </head>
@@ -37,24 +34,27 @@
         <img src="images/logos-hope-logo.jpg" width="122" class="om-logo" />
         <h1>Merci d'être là !</h1>
         
-        <p class="lead">Votre aide nous est très précieuse</p>
+        <p class="lead">Votre aide nous est très précieuse. Nous avons besoin de 75% de notre soutien en promesse de dons avant notre départ.</p>
       </div>
+
+     
 
       <div class="row marketing">
         <div class="col-sm-12">
           <div class="col-sm-3">
             <div class="fixed-height-450">
               <div class="progress vertical bottom">
-                <div class="progress-bar" role="progressbar" data-transitiongoal="1000"  aria-valuemin="0" aria-valuemax="20000"></div>
+                <div class="progress-bar" role="progressbar" data-transitiongoal="1000"  aria-valuemin="0" aria-valuemax="19500"></div>
               </div>
+              <div class="threshold">
+                <span>75%</span>
+              </div>
+              
             </div>
           </div>
           <div class="col-sm-9">
-            <p class="lead">
-              Suivez notre soutien avec cette jauge :)
-              <img src="../images/red-arrow.png" width="50" class="arrow-red">
-            </p>
-            <form>
+            <div id="error" class="alert alert-danger hide" style="position:asbolute;"></div>
+            <form id="omForm">
               <div class="form-group">
                 <label for="firstname">Quel est votre prénom ?</label>
                 <input type="text" class="form-control input-lg" id="firstname" placeholder="Prénom">
@@ -62,7 +62,11 @@
               </div>
               <div class="form-group form-group-lg">
                 <label for="name">Et est votre nom ?</label>
-                <input type="text" class="form-control" id="name" placeholder="Nom">
+                <input type="text" class="form-control" id="lastname" placeholder="Nom">
+              </div>
+              <div class="form-group form-group-lg">
+                <label for="email">Votre email <small>(pour les lettres de nouvelles)</small> ?</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
               </div>
               <div class="form-group form-group-lg">
                 <label for="exampleInputFile">Quel type de don voulez vous faire ?</label>
@@ -71,41 +75,29 @@
                     <a class="btn btn-support btn-success btn-lg" id="btn-ponctual" data-type="ponctual">Ponctuel</a>
                   </div>
                   <div class="btn-group" role="group">
-                    <a btn-lg" class="btn btn-support btn-success btn-lg" id="btn-monthly" data-type="monthly">Mensuel</a>
+                    <a class="btn btn-support btn-success btn-lg" id="btn-monthly" data-type="monthly">Mensuel</a>
                   </div>
                 </div>
               </div>
               <div class="form-group form-group-lg" id="ponctuel">
-                <label for="exampleInputFile">Montant  ?</label>
+                <label for="amount">Montant ?</label>
                 <div class="input-group">
-                  <input type="number" min="1" class="form-control" id="montant" disabled>
+                  <input type="number" max="19500" min="1" class="form-control" id="amount" disabled >
                   <span class="input-group-addon">&euro;</span>
                 </div>
               </div>
-
-              <!--<div class="form-group">
-                <label for="exampleInputFile">Voulez vous nous soutenir dans la prière ?</label>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-raised btn-success btn-lg">Oui</button>
-                  </div>
-                  <div class="btn-group" role="group">
-                    <button type="button btn-lg" class="btn btn-raised btn-success btn-lg">Non</button>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputFile">Voulez vous nous soutenir financièrement ?</label>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-raised btn-success btn-lg">Ponctuel</button>
-                  </div>
-                  <div class="btn-group" role="group">
-                    <button type="button btn-lg" class="btn btn-raised btn-success btn-lg">Mensuel</button>
-                  </div>
-              </div>-->
-              <button type="submit" class="btn btn-danger btn-block btn-lg">Continuer</button>
+              <a class="btn btn-danger btn-block btn-lg btn-continue">Continuer</a>
             </form>
+            <div class="hide alert alert-success" id="thanks">
+              <p class="lead">Un grand merci pour votre promesse de don !</p>
+              <p>Vous avez décider de faire un don ponctuel de 10&euro;</p>
+              <p>Nous allons vous contacter dans les jours qui viennent et vous donner plus d'informations pour concrétiser cette promesse.</p>
+            </div>
           </div>
         </div>
       </div>
+
+      
 
       <div class="sun">
         <div class="ray_box">
@@ -120,12 +112,10 @@
           <div class="ray ray9"></div>
           <div class="ray ray10"></div>
         </div>
-    </div>
-
-      
+       </div>
 
       <div class="footer">
-        <p>♥ de Greg et Anne</p>
+        <p class="lead text-center">♥ de Greg et Anne</p>
       </div>
     </div>
 
@@ -191,8 +181,7 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
-    <script src="scripts/ripple.js"></script>
-    <script src="scripts/material.js"></script>
+
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>

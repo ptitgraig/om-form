@@ -5,12 +5,11 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-progressbar/scss/bootstrap-progressbar-3.3.0-3.x.x.scss";
 // endbower
 
-/*@import "_form";
-@import "_ripple";*/
+@import "_progressbar";
 @import "_sun";
 @import "_ship";
 
-#montant {
+#amount {
   text-align: right;
 }
 .browserupgrade {
@@ -20,73 +19,30 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
+.btn.btn-selected {
+    background-color: #398439;
+    border-color: #398439;
+}
+
 .om-logo {
   border: 5px solid #fff;
   border-radius: 5px;
   box-shadow: 0px 0px 8px #fff;
 }
 
-.fixed-height-450 {
-  height:450px;
-}
 
-.progress.vertical {
-  width:100%;
-}
-
-.progress-bar {
-  /*background:linear-gradient(
-    0deg,
-    hsl(210,79%,30%), 
-    #f5f5f5 ) 
-    no-repeat center;*/
-    background:#fefefe ;
-}
-.progress-bar::before {
-    content:" ";
-    position: absolute;
-    top:0;
-    display:block;
-    width:100%;
-    height:100px;
-    background: orange
-        
-  }
-.progress-bar::after {
-    content:" ";
-    position: absolute;
-    top:99px;
-    display:block;
-    width:100%;
-    height:100%;
-    background: hsl(210,79%,30%);
-  }
 /* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
   text-shadow:1px 1px #333;
-  /*background:radial-gradient( 
-    hsl(90,80%,80%), 
-    hsl(210,50%,70%) ) 
-    no-repeat center*/
-
-    /*background:#2EB5E5 ;*/
-
-
-background: #00d2ff; 
-background: -webkit-linear-gradient(to bottom, #00d2ff , #928DAB); 
-background: linear-gradient(to bottom, #00d2ff , #928DAB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-                
+  background: #00d2ff;  
+  background: linear-gradient(bottom, #00d2ff , #007299) no-repeat center; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.arrow-red {
-  position: absolute;
-  left:-40px;
-  top:20px;
-
+.alert {
+  text-shadow: none;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -97,39 +53,18 @@ background: linear-gradient(to bottom, #00d2ff , #928DAB); /* W3C, IE 10+/ Edge,
   padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
 
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  color: #fff;
+  border-top: 1px solid #fff;
 }
 
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
 
 /* Supporting marketing content */
 .marketing {
@@ -160,15 +95,5 @@ background: linear-gradient(to bottom, #00d2ff , #928DAB); /* W3C, IE 10+/ Edge,
   .footer {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
